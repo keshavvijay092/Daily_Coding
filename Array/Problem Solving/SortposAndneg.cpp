@@ -6,22 +6,22 @@ int sorted(int arr[],int n)
        
     //    approach - elements hai and positive elements hai 
     // 2 pointer approach
-    int s = 0;
-    int e = n-1; 
-    while(s<e)
+   int j = 0;
+   int i = 0;
+   while(i<n)
+   {
+    if(arr[i]>0)
     {
-        if(arr[s]>0 && arr[e]<0)
-        { 
-        swap(arr[s],arr[e]);
-        }
-        s++;
-        e--;
+        swap(arr[i],arr[j]);
+        j++;
     }
-     for(int i = 0;i<n;i++)
+     i++;
+   }
+      for(int i = n-1;i>0;i--)
    {
     cout<<arr[i]<<" ";
    }
-    return 0;
+   return 0;
 }
 int main()
 {
