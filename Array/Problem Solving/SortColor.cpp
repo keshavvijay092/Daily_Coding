@@ -18,24 +18,29 @@ void sortcolor(int arr[],int n)
     //1 2 0 1 0 1
     // 0 0 1 1 2 1 
    int a = -1;
-    while(i<=n)
+   int size = n;
+    while(size>0)
     {
        if(arr[i] == 0)
        {
         swap(arr[i],arr[s]);
         i++;
         s++;
+       size--;   
        }
        else if(arr[i] == 2 && a !=i )
        {
         swap(arr[i],arr[e]);
         a = e;
         e--;
+        size--;
         
        }
        else{
         i++;
+       size--;
        }
+
     }
 
     print(arr,n);
@@ -44,9 +49,9 @@ void sortcolor(int arr[],int n)
 
 int main()
 {
-    int n = 6;
+    int n = 13;
 
- int arr[n]={2,0,2,1,1,0};
+ int arr[n]={2,0,2,2,1,2,0,1,2,1,1,1,0};
  sortcolor(arr,n);
     return 0;
 }
